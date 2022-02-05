@@ -1,5 +1,4 @@
-export const List = (props) => {
-    const title = props.title;
+export const List = ({ title }) => {
     return (
         <div>
             <h4>{ title }</h4> {/* {} の中はJSが動作する*/}
@@ -9,7 +8,8 @@ export const List = (props) => {
 }
 
 //別の書き方
-// export const List = ({ title }) => {
+// export const List = (props) => {
+//     const title = props.title;
 //     return (
 //         <div>
 //             <h4>{ title }</h4> {/* {} の中はJSが動作する*/}
