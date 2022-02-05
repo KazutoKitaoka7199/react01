@@ -17,7 +17,8 @@ React入門（復習もかねて詳細に行ったことを記録）
   <工程><br>
   (1)firebaseで新しいプロジェクトを作成する<br>
   (2)コマンドを使用してfirebase Hostingサービスでアプリをデプロイ<br>
-  参考UPL：<br>
+
+  参考UPL：
   https://zenn.dev/watarukun/articles/8f3e318bacf97cabf879  
   https://www.udemy.com/course-dashboard-redirect/?course_id=2820141  
 
