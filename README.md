@@ -21,7 +21,7 @@ React入門（復習もかねて詳細に行ったことを記録）
   https://zenn.dev/watarukun/articles/8f3e318bacf97cabf879  
   https://www.udemy.com/course-dashboard-redirect/?course_id=2820141  
 
-・JSXの基本的な書き方
+- JSXの基本的な書き方
   class → className<br>
   {}を使用することでJavaScriptの要素を代入できる<br>
   onclickのような2つの言葉の属性はcamelCaseで記述する(onClick)<br>
