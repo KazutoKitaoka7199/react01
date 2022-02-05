@@ -18,11 +18,11 @@ React入門（復習もかねて詳細に行ったことを記録）
   (1)firebaseで新しいプロジェクトを作成する<br>
   (2)コマンドを使用してfirebase Hostingサービスでアプリをデプロイ<br>
 
-  参考UPL：
+  参考UPL：<br>
   https://zenn.dev/watarukun/articles/8f3e318bacf97cabf879  
   https://www.udemy.com/course-dashboard-redirect/?course_id=2820141  
 
-- JSXの基本的な書き方
+- JSXの基本的な書き方<br>
   class → className<br>
   {}を使用することでJavaScriptの要素を代入できる<br>
   onclickのような2つの言葉の属性はcamelCaseで記述する(onClick)<br>
@@ -41,4 +41,10 @@ React入門（復習もかねて詳細に行ったことを記録）
   propsは親コンポーネントから子供のコンポーネントを呼び出すときに使用する。読み取り専用。
 - stateはコンポーネントの状態を表す。変更可能。
   Reactには useState という関数が用意されていてそれを利用することで state を定義できる。
+  useStateは返り値として配列の1つ目の値を返し、2つ目の値は状態を変更するための関数、引数が初期値となっている。
+```
+const [description,setDescrition] = useState('クリック前の表示');
+```
 
+## 3回目
+**やったこと**
