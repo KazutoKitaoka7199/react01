@@ -1,4 +1,5 @@
-import './App.css';
+import { useState } from "react";
+import { List } from "./list";
 import { initializeApp } from "firebase/app";
 const firebaseConfig = {
   apiKey: "AIzaSyByZKUtkmlvrSsJGDrw2WfRnkhbFZz8OM4",
@@ -12,9 +13,20 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 
 function App() {
+  const [description,setDescrition] = useState('クリック前の表示');
+  
+  const changeDescription = () => {
+    setDescrition('クリック後の表示です。');
+  }
+  
   return (
     <div className='App'>
-      <div>React入門</div>
+      <div>
+        React入門
+        { description }
+        <List title="取り扱い言語一覧"/>
+        <button onClick={changeDescription}>ボタン</button>
+      </div>
     </div>
   );
 }
