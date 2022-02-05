@@ -8,11 +8,14 @@ const firebaseConfig = {
   messagingSenderId: "520838991472",
   appId: "1:520838991472:web:4f1e401e82e59b787aaeb5"
 };
+// Initialize Firebase
 const app = initializeApp(firebaseConfig);
 
 function App() {
   return (
-    <div>React入門</div>
+    <div className='App'>
+      <div>React入門</div>
+    </div>
   );
 }
 
