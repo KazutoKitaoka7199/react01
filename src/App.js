@@ -1,5 +1,6 @@
 import { useState } from "react";
-import { List } from "./list";
+import { List } from "./List";
+import { Form } from "./Form";
 import { initializeApp } from "firebase/app";
 const firebaseConfig = {
   apiKey: "AIzaSyByZKUtkmlvrSsJGDrw2WfRnkhbFZz8OM4",
@@ -13,19 +14,22 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 
 function App() {
-  const [description,setDescrition] = useState('クリック前の表示');
-  
-  const changeDescription = () => {
-    setDescrition('クリック後の表示です。');
-  }
-  
+  const [tab,setTab] = useState('List');
+
   return (
     <div className='App'>
       <div>
+        <header>
+          <ul>
+            <li onClick={()=>setTab('List')}>リスト</li>
+            <li onClick={()=>setTab('Form')}>フォーム</li>
+          </ul>
+        </header>
+        <hr/>
         React入門
-        { description }
-        <List title="取り扱い言語一覧"/>
-        <button onClick={changeDescription}>ボタン</button>
+        {
+          tab === 'List' ? <List/> : <Form />
+        }
       </div>
     </div>
   );

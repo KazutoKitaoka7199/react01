@@ -1,4 +1,5 @@
-React入門（復習もかねて詳細に行ったことを記録）
+React入門
+https://www.youtube.com/playlist?list=PL0ATFRXu9uECMPBV7GspaLz3KqKILfa13
 
 ## 1回目
 **やったこと**
@@ -48,3 +49,29 @@ const [description,setDescrition] = useState('クリック前の表示');
 
 ## 3回目
 **やったこと**
+- Class Componentsでのコンポーネントの書き方
+
+**知識**
+- Class ComponentsとFunction Componentsについて
+  Class Componentsはclassを定義して、renderメソッドでHTMLを返す
+  一方で、Function Componentsはfunctionを定義して、その返り値がHTML
+- プロパティは
+```
+this.props
+```
+- ステートは
+```
+this.state
+this.setState({ key: value })
+```
+
+## 4回目
+**やったこと**
+- 条件分岐と繰り返し
+  
+**知識**
+- 条件分岐を行う際は、三項演算子を使用する
+- 繰り返し処理はmap関数を使用する
+  map関数は配列の各要素に対してコールバック関数を実行できる
+
+
