@@ -1,6 +1,8 @@
-import { useState } from "react";
-import { List } from "./list";
+import React from "react";
+import { List } from "./List";
+import { Form } from "./Form";
 import { initializeApp } from "firebase/app";
+import { render } from "@testing-library/react";
 const firebaseConfig = {
   apiKey: "AIzaSyByZKUtkmlvrSsJGDrw2WfRnkhbFZz8OM4",
   authDomain: "reactapp01-listapp.firebaseapp.com",
@@ -12,23 +14,27 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 
-function App() {
-  const [description,setDescrition] = useState('クリック前の表示');
-  
-  const changeDescription = () => {
-    setDescrition('クリック後の表示です。');
+class App extends React.Component {
+  constructor(props){
+    super(props);
+    this.state = { tab: 'list' };
   }
-  
-  return (
-    <div className='App'>
+  render() {
+    const { tab } = this.state;
+    return (
       <div>
-        React入門
-        { description }
-        <List title="取り扱い言語一覧"/>
-        <button onClick={changeDescription}>ボタン</button>
+        <header>
+          <ul>
+            <li onClick={()=> this.setState({tab:'list'})}>リスト</li>
+            <li onClick={()=> this.setState({tab:'form'})}>フォーム</li>
+          </ul>
+        </header>
+        <hr/>
+        {
+          tab === 'list' ? <List /> : <Form />
+        }
       </div>
-    </div>
-  );
+    );
+  }
 }
-
 export default App;
