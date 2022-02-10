@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { List } from "./List";
 import { Form } from "./Form";
+import { LANGUAGES } from "./const/Languages";
 import { initializeApp } from "firebase/app";
 const firebaseConfig = {
   apiKey: "AIzaSyByZKUtkmlvrSsJGDrw2WfRnkhbFZz8OM4",
@@ -15,6 +16,12 @@ const app = initializeApp(firebaseConfig);
 
 function App() {
   const [tab,setTab] = useState('List');
+  const [langs,setLangs] = useState(LANGUAGES);
+
+  const addLang = (lang) => {
+    setLangs([...langs,lang]);
+    setTab('list');
+  }
 
   return (
     <div className='App'>
@@ -28,7 +35,7 @@ function App() {
         <hr/>
         React入門
         {
-          tab === 'List' ? <List/> : <Form />
+          tab === 'List' ? <List langs={langs}/> : <Form onAddLang={addLang}/>
         }
       </div>
     </div>
